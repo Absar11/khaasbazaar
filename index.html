@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Trending Bazaar - Trending products with free delivery.">
+  <title>Trending Bazaar</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#">
+        <img src="assets/logo.png" alt="KhaasBazaar" class="brand-logo"
+          onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+        <span style="display:none;" class="brand-text">KhaasBazaar</span>
+      </a>
+
+      <div class="header-actions">
+        <button class="icon-button" aria-label="Search">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+        </button>
+        <button class="icon-button" id="wishlistButton" aria-label="Wishlist">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round">
+            <path
+              d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z">
+            </path>
+          </svg>
+        </button>
+        <button class="icon-button cart-icon-btn" id="cartButton" aria-label="Cart">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round">
+            <circle cx="9" cy="21" r="1"></circle>
+            <circle cx="20" cy="21" r="1"></circle>
+            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+          </svg>
+          <span class="cart-badge" id="cartCount">0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero-carousel">
+      <div class="carousel-track" id="carouselTrack">
+        <div class="carousel-slide active">
+          <img src="assets/hero1.png" alt="Discover What's New" class="carousel-img" fetchpriority="high">
+        </div>
+        <div class="carousel-slide">
+          <img src="assets/hero2.png" alt="Trending Now" class="carousel-img" loading="lazy">
+        </div>
+        <div class="carousel-slide">
+          <img src="assets/hero3.png" alt="Great Products. Better Prices." class="carousel-img" loading="lazy">
+        </div>
+        <div class="carousel-slide">
+          <img src="assets/hero4.png" alt="Shop Easy. We Deliver." class="carousel-img" loading="lazy">
+        </div>
+      </div>
+      <div class="carousel-indicators" id="carouselIndicators">
+        <button class="indicator active" data-slide="0" aria-label="Slide 1"></button>
+        <button class="indicator" data-slide="1" aria-label="Slide 2"></button>
+        <button class="indicator" data-slide="2" aria-label="Slide 3"></button>
+        <button class="indicator" data-slide="3" aria-label="Slide 4"></button>
+      </div>
+    </section>
+
+    <section class="section" id="trending">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">What's trending</p>
+            <h1>Trending Products</h1>
+          </div>
+          <p class="section-subtitle">Popular finds, simple ordering, free delivery.</p>
+        </div>
+        <div class="product-grid" id="trendingGrid"></div>
+      </div>
+    </section>
+
+    <section class="section section-soft" id="categories">
+      <div class="container">
+        <div class="section-heading compact">
+          <div>
+            <p class="eyebrow">Explore</p>
+            <h2>Shop by Category</h2>
+          </div>
+        </div>
+        <div class="category-list" id="categoryList"></div>
+      </div>
+    </section>
+
+    <section class="section" id="products">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Our collection</p>
+            <h2>All Products</h2>
+          </div>
+          <select class="category-select" id="categoryFilter">
+            <option value="all">All Categories</option>
+          </select>
+        </div>
+        <div class="product-grid" id="productGrid"></div>
+        <div class="empty-state hidden" id="noProducts">No products found.</div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div><strong>Trending Bazaar</strong>
+        <p>Trending products, simple ordering.</p>
+      </div>
+      <div class="footer-links">
+        <button type="button" data-policy="terms">Terms & Conditions</button>
+        <button type="button" data-policy="privacy">Privacy Policy</button>
+        <button type="button" data-policy="returns">Return / Replacement Policy</button>
+      </div>
+    </div>
+  </footer>
+
+  <div class="modal hidden" id="productModal" aria-hidden="true">
+    <div class="modal-backdrop" data-close="product"></div>
+    <div class="modal-card product-modal-card"><button class="modal-close" type="button" data-close="product">×</button>
+      <div id="productModalContent"></div>
+    </div>
+  </div>
+
+  <div class="drawer-backdrop hidden" id="drawerBackdrop"></div>
+  <aside class="cart-drawer" id="cartDrawer">
+    <div class="drawer-header">
+      <p class="eyebrow">Your order</p>
+      <h2>Cart</h2><button class="modal-close" id="closeCart" type="button">×</button>
+    </div>
+    <div class="cart-items" id="cartItems"></div>
+    <div class="drawer-footer">
+      <div class="cart-total-row"><span>Total</span><strong id="cartTotal">₹0</strong></div>
+      <p class="free-delivery-note">🚚 Free Delivery</p>
+      <button class="primary-button full-width" id="proceedButton" type="button">Proceed to Order</button>
+    </div>
+  </aside>
+
+  <aside class="cart-drawer" id="wishlistDrawer">
+    <div class="drawer-header">
+      <p class="eyebrow">Saved Items</p>
+      <h2>Wishlist</h2><button class="modal-close" id="closeWishlist" type="button">×</button>
+    </div>
+    <div class="cart-items" id="wishlistItems"></div>
+  </aside>
+
+  <div class="modal hidden" id="checkoutModal" aria-hidden="true">
+    <div class="modal-backdrop" data-close="checkout"></div>
+    <div class="modal-card checkout-card">
+      <button class="modal-close" type="button" data-close="checkout">×</button>
+      <p class="eyebrow">Almost there</p>
+      <h2>Place Order Request</h2>
+      <p class="modal-intro">Enter your delivery details. WhatsApp will open with your order message.</p>
+      <form id="checkoutForm">
+        <label>Full Name<input id="customerName" required></label>
+        <label>Mobile / WhatsApp Number<input id="customerPhone" type="tel" inputmode="numeric" required></label>
+        <label>Complete Address<textarea id="customerAddress" rows="3" required></textarea></label>
+        <label>Pincode<input id="customerPincode" inputmode="numeric" maxlength="6" required></label>
+        <label class="checkbox-label"><input id="policyConsent" type="checkbox" required><span>I agree to the <button
+              type="button" class="inline-policy" data-policy="terms">Terms & Conditions</button> and <button
+              type="button" class="inline-policy" data-policy="privacy">Privacy Policy</button>.</span></label>
+        <button class="primary-button full-width" type="submit">Place Order on WhatsApp</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="modal hidden" id="policyModal" aria-hidden="true">
+    <div class="modal-backdrop" data-close="policy"></div>
+    <div class="modal-card policy-card"><button class="modal-close" type="button" data-close="policy">×</button>
+      <p class="eyebrow">Important information</p>
+      <h2 id="policyTitle"></h2>
+      <div class="policy-content" id="policyContent"></div>
+    </div>
+  </div>
+
+  <div class="toast" id="toast"></div>
+  <script src="products.js"></script>
+  <script src="script.js"></script>
+</body>
+
+</html>
