@@ -48,6 +48,8 @@ const products = [
     id: "TB005",
     name: "Coffee Mug Warmer Electric Cup Heater",
     images: [
+      "https://i.ibb.co/zVr8Zstw/Whats-App-Image-2026-09-27-at-21-25-44-1.jpg",
+      "https://i.ibb.co/Y4W5bmJJ/Whats-App-Image-2026-09-27-at-21-25-44.jpg",
       "https://i.ibb.co/xt9FfvTs/mug3.jpg",
       "https://i.ibb.co/TqYMdwft/mug2.jpg",
       "https://i.ibb.co/d3FrF12/mug1.jpg",
