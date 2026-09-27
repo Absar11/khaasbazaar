@@ -45,6 +45,28 @@ const products = [
     ]
   },
   {
+    id: "TB005",
+    name: "Coffee Mug Warmer Electric Cup Heater",
+    images: [
+      "https://i.ibb.co/xt9FfvTs/mug3.jpg",
+      "https://i.ibb.co/TqYMdwft/mug2.jpg",
+      "https://i.ibb.co/d3FrF12/mug1.jpg",
+      "https://i.ibb.co/Xxjfsspm/Whats-App-Image-2026-09-27-at-17-49-59-1.jpg"
+    ],
+    mrp: 899,
+    sellingPrice: 449,
+    category: "Home & Office",
+    trending: true,
+    stockStatus: "in-stock",
+    description: "☕ Smart Beverage Warmer: Keeps your coffee, tea, milk, or cocoa warm at the perfect temperature for hours.\n🔥 Efficient Heating Plate: High-performance heating pad maintains steady warmth without overheating.\n🏠 Ideal for Home & Office: Perfect for desks, workstations, or study tables—enjoy warm drinks anytime.\n⚙️ One-Touch Operation: Simple switch control for quick and hassle-free use.\n\nNon Returnable",
+    specifications: {
+      "Product Type": "Mug Warmer",
+      "Usage": "Home & Office",
+      "Return Policy": "Non Returnable"
+    },
+    variants: []
+  },
+  {
     id: "TB001",
     name: "Mini Portable Chopper",
     images: ["https://i.ibb.co/placeholder/product-1.jpg"],
@@ -53,7 +75,7 @@ const products = [
     deliveryCharge: 40,
     category: "Kitchen",
     trending: true,
-    stockStatus: "in-stock",
+    stockStatus: "out-of-stock",
     description: "A compact kitchen helper for quick everyday chopping.",
     specifications: { Capacity: "500ml", Material: "Food-grade plastic", Usage: "Kitchen" },
     variants: []
@@ -66,7 +88,7 @@ const products = [
     sellingPrice: 799,
     category: "Home",
     trending: true,
-    stockStatus: "in-stock",
+    stockStatus: "out-of-stock",
     description: "Compact rechargeable LED lamp for desks and bedside use.",
     specifications: { Power: "5W", Charging: "USB", Usage: "Indoor" },
     variants: []
@@ -79,12 +101,13 @@ const products = [
     sellingPrice: 899,
     category: "Gadgets",
     trending: true,
-    stockStatus: "in-stock",
+    stockStatus: "out-of-stock",
     description: "A compact portable fan for convenient everyday cooling.",
     specifications: { Power: "5W", Charging: "USB", Speed: "3 Levels" },
     variants: [
-      { name: "Black", price: 899, stockStatus: "in-stock", images: ["https://i.ibb.co/placeholder/product-3-black.jpg"] },
-      { name: "White", price: 949, stockStatus: "in-stock", images: ["https://i.ibb.co/placeholder/product-3-white.jpg"] }
+      { name: "Black", price: 899, stockStatus: "out-of-stock", images: ["https://i.ibb.co/placeholder/product-3-black.jpg"] },
+      { name: "White", price: 949, stockStatus: "out-of-stock", images: ["https://i.ibb.co/placeholder/product-3-white.jpg"] }
     ]
-  }
+  },
+
 ];
