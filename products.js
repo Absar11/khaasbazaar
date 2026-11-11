@@ -34,7 +34,7 @@ const products = [
       {
         name: "12 Pcs",
         price: 249,
-        stockStatus: "in-stock",
+        stockStatus: "out-of-stock",
         images: [
           "https://i.ibb.co/Mk5nW9Ts/diya-1.jpg",
           "https://i.ibb.co/8gRY3BSW/diya2.jpg",
@@ -43,7 +43,7 @@ const products = [
       {
         name: "24 Pcs",
         price: 399,
-        stockStatus: "in-stock",
+        stockStatus: "out-of-stock",
         images: [
           "https://i.ibb.co/ZpLj1JwM/diya3.jpg",
           "https://i.ibb.co/XZznRnv6/diya4.jpg",
